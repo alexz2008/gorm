@@ -74,7 +74,7 @@ func Open(dialect string, args ...interface{}) (db *DB, err error) {
 			source = args[1].(string)
 		}
 		dbSQL, err = sql.Open(driver, source)
-		ownDbSQL = true
+		ownDbSQL = false //true change to false by alex.z 2020/05/19
 	case SQLCommon:
 		dbSQL = value
 		ownDbSQL = false
